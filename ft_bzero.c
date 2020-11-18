@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:06:26 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/18 19:21:33 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/18 23:46:00 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *c;
+	char *c;
 
-	c = (unsigned char *)s;
+	c = (char*)s;
 	while (n-- > 0)
 		*(c) = 0;
 }

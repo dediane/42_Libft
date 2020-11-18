@@ -6,11 +6,12 @@
 #    By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:15:04 by ddecourt          #+#    #+#              #
-#    Updated: 2020/11/18 23:13:40 by ddecourt         ###   ########.fr        #
+#    Updated: 2020/11/18 23:42:34 by ddecourt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= ft_strlen.c \
+SRCS	= ft_bzero.c \
+	  ft_strlen.c \
 	  ft_isalpha.c \
 	  ft_isdigit.c \
 	  ft_isalnum.c \
