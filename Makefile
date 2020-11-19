@@ -6,12 +6,14 @@
 #    By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:15:04 by ddecourt          #+#    #+#              #
-#    Updated: 2020/11/19 16:35:10 by ddecourt         ###   ########.fr        #
+#    Updated: 2020/11/19 17:56:21 by ddecourt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	= ft_bzero.c \
 	  ft_memset.c \
+	  ft_memcpy.c \
+	  ft_memccpy.c \
 	  ft_strlen.c \
 	  ft_isalpha.c \
 	  ft_isdigit.c \
