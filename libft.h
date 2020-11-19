@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 18:13:19 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/19 12:30:24 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/19 16:45:19 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdio.h>
 
 void		ft_bzero(void *s, size_t n);
-void		ft_memset(void *b, int c, size_t len);
+void		*ft_memset(void *b, int c, size_t len);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void		*ft_memmove(void *dst, const void *src, size_t len);
@@ -42,6 +42,7 @@ void		*ft_calloc(size_t count, size_t size);
 char		*ft_strdup(const char *s1);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
-
+char 		*ft_strtrim(char const *s1, char const *set);
+char		**ft_split(char const *s, char c);
 
 #endif

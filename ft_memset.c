@@ -6,19 +6,23 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:22:45 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/18 19:27:33 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/19 17:28:44 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char *a = NULL;
+	size_t i;
+	unsigned char *a; 
 
-	*a = (unsigned char)b;
-	while (len-- > 0)
+	a = (unsigned char*)b;
+	i = 0;
+	while (i < len)
 	{
-		*(a++) = (unsigned char)c;
+		*(a + i) = (unsigned char) c;
+		i++;
 	}
+	return (a);
 }

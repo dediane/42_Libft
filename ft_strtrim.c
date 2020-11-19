@@ -6,30 +6,61 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 01:37:59 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/19 12:25:59 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/19 15:52:21 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_in_set(char c, char const *set)
-{
-	int i;
-	
-	i = -1;
-	while (set[++i])
-	{
-		if (c == set[i])
-			return (1);
-	}
-	return (0);
-}
-
-char *ft_strtrim(char const *s1, char const *set)
+static int	is_in_set(char c, char const *set)
 {
 	int i;
 
 	i = 0;
-	if (is_in_set(s1[i]))
-		
+	while (set[i])
+	{
+		if (c == set[i])
+			return (1);
+		i++;
+	}
+	return (0);
 }
+
+char		*ft_strtrim(char const *s1, char const *set)
+{
+	int	i;
+	int	j;
+	int	k;
+	int	len;
+	char		*s2;
+
+	i = 0;
+	j = 1;
+	k = 0;
+	len = ft_strlen(s1);
+	while (is_in_set(s1[i], set))
+		i++;
+	printf("i = %d\n", i);
+	while (is_in_set(s1[(len - 1) - j], set))
+		j++;
+	printf("j = %d\n", j);
+	if (!(s2 = malloc(sizeof(char) * (len - (i + j)))))
+		return (NULL);
+	while (k + i < (len - j))
+	{
+		s2[k] = s1[k + i];
+		k++;
+	}
+	s2[k] = '\0';
+	return (s2);
+}
+
+/*int main(void)
+{
+	char const *s1;
+	char const *set;
+
+	s1 = "###23EEBonjour33#3MondeEE23##E3";
+	set = "#32E";
+	printf("%s", ft_strtrim(s1, set));
+}*/
