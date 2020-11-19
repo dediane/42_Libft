@@ -6,47 +6,84 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 12:28:41 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/19 16:29:15 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/20 00:43:25 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char **ft_split(char const *s, char c)
+static int	is_c(char s, char c)
+{
+	if (s == c)
+		return (1);
+	return (0);
+}
+
+static int	nb_words(char const *s, char c)
+{
+	int i;
+	int nb;
+
+	nb = 0;
+	i = 0;
+	while (s[i] && is_c(s[i], c))
+		i++;
+	while (s[i])
+	{
+		if (!is_c(s[i], c) && (is_c(s[i + 1], c) || s[i + 1] == '\0'))
+			nb++;
+		i++;
+	}
+	return (nb);
+}
+
+static int	word_size(char const *s, char c)
+{
+	int i;
+
+	i = 0;
+	while (!is_c(s[i], c) && s[i] != '\0')
+		i++;
+	return (i);
+}
+
+static char	**fill_tab(char **tab, char const *s, char c, int size)
 {
 	int i;
 	int j;
 	int k;
-	int size;
-	char **tab;
+	int to_malloc;
 
 	i = 0;
 	j = 0;
-	k = 0;
-	size = 0;
-	while (s[i])
+	while (i <= size)
 	{
-		if (s[i] == c)
-			size++;
+		k = 0;
+		while (s[j] && is_c(s[j], c))
+			j++;
+		if (s[j] && !is_c(s[j], c))
+		{
+			to_malloc = word_size(&s[j], c);
+			if (!(tab[i] = malloc(sizeof(char) * (to_malloc + 1))))
+				return (NULL);
+			while (s[j] && !is_c(s[j], c))
+				tab[i][k++] = s[j++];
+			tab[i][k] = '\0';
+		}
 		i++;
 	}
-	if (!(tab = malloc(sizeof(char*) * size + 1)))
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		j = 0;
-		while (s[i + j])
-		{
-			if (s[i + j] == c)
-			{
-				if (!(tab[k] = malloc(sizeof(char) * j + 1)))
-					return (NULL);
-				k++;
+	return (tab);
+}
 
-			}
-			j++;
-		}
-	}
+char		**ft_split(char const *s, char c)
+{
+	char	**tab;
+	int		size;
+
+	size = nb_words(s, c);
+	if (!(tab = malloc(sizeof(char*) * (size + 1))))
+		return (NULL);
+	tab[size] = 0;
+	tab = fill_tab(tab, s, c, size);
 	return (tab);
 }
