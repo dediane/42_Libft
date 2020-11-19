@@ -6,11 +6,11 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 01:37:59 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/18 12:28:19 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/19 12:25:59 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	is_in_set(char c, char const *set)
 {
@@ -27,5 +27,9 @@ int	is_in_set(char c, char const *set)
 
 char *ft_strtrim(char const *s1, char const *set)
 {
-	
+	int i;
+
+	i = 0;
+	if (is_in_set(s1[i]))
+		
 }
