@@ -6,15 +6,15 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 01:37:59 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/20 12:45:53 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/20 19:54:14 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_in_set(char c, char const *set)
+static int		is_in_set(char c, char const *set)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (set[i])
@@ -26,41 +26,38 @@ static int	is_in_set(char c, char const *set)
 	return (0);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+static char		*null_malloc(void)
 {
-	int	i;
-	int	j;
-	int	k;
-	int	len;
-	char		*s2;
+	char	*s2;
 
-	i = 0;
-	j = 0;
-	k = 0;
-	len = ft_strlen(s1);
-	while (is_in_set(s1[i], set))
-		i++;
-//	printf("i = %d\n", i);
-	while (is_in_set(s1[(len) - (j + 1)], set))
-		j++;
-//	printf("j = %d\n", j);
-	if (!(s2 = malloc(sizeof(char) * (len  - (i + j)))))
+	if (!(s2 = malloc(sizeof(char) * 1)))
 		return (NULL);
-	while (k + i < (len - j))
-	{
-		s2[k] = s1[k + i];
-		k++;
-	}
-	s2[k] = '\0';
+	s2[0] = '\0';
 	return (s2);
 }
 
-/*int main(void)
+char			*ft_strtrim(char const *s1, char const *set)
 {
-	char const *s1;
-	char const *set;
+	int		i;
+	int		j;
+	int		k;
+	int		len;
+	char	*s2;
 
-	s1 = "###bonjour###";
-	set = "#";
-	printf("%s", ft_strtrim(s1, set));
-}*/
+	i = 0;
+	j = 0;
+	k = -1;
+	len = ft_strlen(s1);
+	while (is_in_set(s1[i], set))
+		i++;
+	if (i == len)
+		return (null_malloc());
+	while (is_in_set(s1[(len) - (j + 1)], set))
+		j++;
+	if (!(s2 = malloc(sizeof(char) * (len - (i + j)))))
+		return (NULL);
+	while (++k + i < (len - j))
+		s2[k] = s1[k + i];
+	s2[k] = '\0';
+	return (s2);
+}

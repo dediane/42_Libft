@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 22:34:06 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/19 14:07:44 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/20 19:21:09 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		s3[i] = s1[i];
 	while (s2[++j])
 		s3[i + j] = s2[j];
-	s3[i + j  + 1] = '\0';
+	s3[i + j + 1] = '\0';
 	return (s3);
 }
