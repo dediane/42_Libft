@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 01:37:59 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/19 15:52:21 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/20 12:25:26 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ char		*ft_strtrim(char const *s1, char const *set)
 	char		*s2;
 
 	i = 0;
-	j = 1;
+	j = 0;
 	k = 0;
 	len = ft_strlen(s1);
 	while (is_in_set(s1[i], set))
 		i++;
 	printf("i = %d\n", i);
-	while (is_in_set(s1[(len - 1) - j], set))
+	while (is_in_set(s1[(len -1) - j], set))
 		j++;
 	printf("j = %d\n", j);
-	if (!(s2 = malloc(sizeof(char) * (len - (i + j)))))
+	if (!(s2 = malloc(sizeof(char) * (len  - (i + j + 1)))))
 		return (NULL);
 	while (k + i < (len - j))
 	{
@@ -55,12 +55,12 @@ char		*ft_strtrim(char const *s1, char const *set)
 	return (s2);
 }
 
-/*int main(void)
+int main(void)
 {
 	char const *s1;
 	char const *set;
 
-	s1 = "###23EEBonjour33#3MondeEE23##E3";
-	set = "#32E";
+	s1 = "###bonjour#bonjour###";
+	set = "#";
 	printf("%s", ft_strtrim(s1, set));
-}*/
+}
