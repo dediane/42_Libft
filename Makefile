@@ -6,7 +6,7 @@
 #    By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:15:04 by ddecourt          #+#    #+#              #
-#    Updated: 2020/11/19 22:04:03 by ddecourt         ###   ########.fr        #
+#    Updated: 2020/11/20 11:25:28 by ddecourt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,10 @@ SRCS	= ft_bzero.c \
 	  ft_strjoin.c \
 	  ft_strtrim.c \
 	  ft_split.c \
+	  ft_putchar_fd.c \
+	  ft_putstr_fd.c \
+	  ft_putendl_fd.c \
+	  ft_putnbr_fd.c \
 
 OBJS	= ${SRCS:.c=.o}
 
