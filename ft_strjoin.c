@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 22:34:06 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/20 19:21:09 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/21 13:30:24 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len;
 	char	*s3;
 
-	len = ft_strlen(s1) + ft_strlen(s2);
 	if (!(s3 = malloc(sizeof(char) * len + 1)))
 		return (NULL);
 	i = -1;
@@ -28,6 +27,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		s3[i] = s1[i];
 	while (s2[++j])
 		s3[i + j] = s2[j];
-	s3[i + j + 1] = '\0';
+	s3[i + j] = '\0';
 	return (s3);
 }
