@@ -6,7 +6,7 @@
 #    By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:15:04 by ddecourt          #+#    #+#              #
-#    Updated: 2020/11/22 04:15:27 by ddecourt         ###   ########.fr        #
+#    Updated: 2020/11/23 01:06:24 by ddecourt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,8 @@ SRCS	= ft_bzero.c \
 	  ft_lstadd_back.c \
 	  ft_lstdelone.c \
 	  ft_lstclear.c \
+	  ft_lstiter.c \
+	  ft_lstmap.c \
 
 OBJS	= ${SRCS:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 12:28:41 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/20 00:43:25 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/23 01:50:17 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ static char	**fill_tab(char **tab, char const *s, char c, int size)
 	int k;
 	int to_malloc;
 
-	i = 0;
+	i = -1;
 	j = 0;
-	while (i <= size)
+	while (++i <= size)
 	{
 		k = 0;
 		while (s[j] && is_c(s[j], c))
@@ -70,7 +70,6 @@ static char	**fill_tab(char **tab, char const *s, char c, int size)
 				tab[i][k++] = s[j++];
 			tab[i][k] = '\0';
 		}
-		i++;
 	}
 	return (tab);
 }
