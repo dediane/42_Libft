@@ -6,7 +6,7 @@
 #    By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:15:04 by ddecourt          #+#    #+#              #
-#    Updated: 2020/11/23 01:06:24 by ddecourt         ###   ########.fr        #
+#    Updated: 2020/11/24 23:46:48 by ddecourt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,8 @@ SRCS	= ft_bzero.c \
 	  ft_putstr_fd.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_fd.c \
-	  ft_lstnew.c \
+
+SRCS_b	= ft_lstnew.c \
 	  ft_lstadd_front.c \
 	  ft_lstsize.c \
 	  ft_lstlast.c \
@@ -55,6 +56,8 @@ SRCS	= ft_bzero.c \
 	  ft_lstmap.c \
 
 OBJS	= ${SRCS:.c=.o}
+
+OBJS_b  = ${SRCS_b:.c=.o}
 
 NAME	= libft.a
 
@@ -74,8 +77,15 @@ $(NAME):	${OBJS}
 
 all:	${NAME}
 
+bonus:	${OBJS} ${OBJS_b}
+		ar -rc ${NAME} ${OBJS} ${OBJS_b}
+		make clean_b
+
 clean:
 	${RM} ${OBJS}
+
+clean_b:
+	${RM} ${OBJS} ${OBJS_b}
 
 fclean:	clean
 		${RM} ${NAME}
