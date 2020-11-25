@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 12:28:41 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/23 01:50:17 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/25 15:36:31 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char		**ft_split(char const *s, char c)
 	size = nb_words(s, c);
 	if (!(tab = malloc(sizeof(char*) * (size + 1))))
 		return (NULL);
-	tab[size] = 0;
+	tab[size] = NULL;
 	tab = fill_tab(tab, s, c, size);
 	return (tab);
 }

@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:22:45 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/20 23:35:46 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/25 13:43:47 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ void	*ft_memset(void *b, int c, size_t len)
 	i = 0;
 	while (i < len)
 		a[i++] = (unsigned char)c;
-	return (a);
+	return (b);
 }

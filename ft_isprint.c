@@ -6,11 +6,11 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 21:52:29 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/18 20:24:43 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/25 13:54:23 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
 	if (c > 31 && c < 127)
 		return (1);

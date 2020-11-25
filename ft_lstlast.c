@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 18:26:49 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/21 18:33:24 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/25 15:51:52 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 t_list	*ft_lstlast(t_list *lst)
 {
 	while (lst->next)
-		lst = lst->next;
+		if (lst != NULL)
+			lst = lst->next;
 	return (lst);
 }
