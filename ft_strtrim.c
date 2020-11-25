@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 01:37:59 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/20 19:54:14 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/25 02:23:16 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 		return (null_malloc());
 	while (is_in_set(s1[(len) - (j + 1)], set))
 		j++;
-	if (!(s2 = malloc(sizeof(char) * (len - (i + j)))))
+	if (!(s2 = malloc(sizeof(char) * (len - (i + j) + 1))))
 		return (NULL);
 	while (++k + i < (len - j))
 		s2[k] = s1[k + i];
