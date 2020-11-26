@@ -6,7 +6,7 @@
 #    By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:15:04 by ddecourt          #+#    #+#              #
-#    Updated: 2020/11/24 23:46:48 by ddecourt         ###   ########.fr        #
+#    Updated: 2020/11/26 01:14:24 by ddecourt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ SRCS	= ft_bzero.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_fd.c \
 
-SRCS_b	= ft_lstnew.c \
+SRCS_B	= ft_lstnew.c \
 	  ft_lstadd_front.c \
 	  ft_lstsize.c \
 	  ft_lstlast.c \
@@ -57,7 +57,7 @@ SRCS_b	= ft_lstnew.c \
 
 OBJS	= ${SRCS:.c=.o}
 
-OBJS_b  = ${SRCS_b:.c=.o}
+OBJS_B  = ${SRCS_B:.c=.o}
 
 NAME	= libft.a
 
@@ -73,23 +73,18 @@ RM	= rm -f
 
 $(NAME):	${OBJS}
 			ar -rc ${NAME} ${OBJS}
-			make clean
 
 all:	${NAME}
 
-bonus:	${OBJS} ${OBJS_b}
-		ar -rc ${NAME} ${OBJS} ${OBJS_b}
-		make clean_b
+bonus:	${OBJS} ${OBJS_B}
+		ar -rc ${NAME} ${OBJS} ${OBJS_B}
 
 clean:
-	${RM} ${OBJS}
-
-clean_b:
-	${RM} ${OBJS} ${OBJS_b}
+	${RM} *.o
 
 fclean:	clean
 		${RM} ${NAME}
 
-re:	fclean all
+re:	fclean all bonus
 
 .PHONY: all clean fclean re
