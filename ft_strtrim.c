@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 01:37:59 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/25 02:23:16 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/26 11:27:05 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	j = 0;
 	k = -1;
+	if (!s1 || !set)
+		return (NULL);
 	len = ft_strlen(s1);
 	while (is_in_set(s1[i], set))
 		i++;

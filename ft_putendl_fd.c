@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 11:07:24 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/20 19:22:10 by ddecourt         ###   ########.fr       */
+/*   Updated: 2020/11/26 11:50:33 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ft_putendl_fd(char *s, int fd)
 	int	i;
 
 	i = -1;
-	while (s[++i])
-		write(fd, &s[i], 1);
-	write(fd, "\n", 1);
+	if (s)
+	{
+		write(fd, s, ft_strlen(s));
+		write(fd, "\n", 1);
+	}
 }
