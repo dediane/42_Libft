@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 17:52:47 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/21 18:25:25 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:55:17 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	while (lst != (void *)0)

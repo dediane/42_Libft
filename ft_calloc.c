@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 14:31:06 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/21 13:00:56 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:26:40 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void *p;
+	void	*p;
 
 	if (!count || !size)
 	{
 		count = 1;
 		size = 1;
 	}
-	if (!(p = malloc(count * size)))
+	p = malloc(count * size);
+	if (!p)
 		return (NULL);
 	ft_bzero(p, count * size);
 	return (p);

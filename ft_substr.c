@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 01:00:47 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/26 11:22:46 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/05/31 14:01:32 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@ static char	*malloc_null(void)
 {
 	char	*str;
 
-	if (!(str = malloc(sizeof(char) * 1)))
+	str = malloc(sizeof(char) * 1);
+	if (!str)
 		return (NULL);
 	str[0] = '\0';
 	return (str);
 }
 
-char		*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	i;
@@ -36,7 +37,8 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 		return (malloc_null());
 	else
 	{
-		if (!(str = malloc(sizeof(char) * (len + 1))))
+		str = malloc(sizeof(char) * (len + 1));
+		if (!str)
 			return (NULL);
 	}
 	while (i < size && i < len)

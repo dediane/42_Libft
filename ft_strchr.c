@@ -6,21 +6,21 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 23:30:05 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/17 00:03:28 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/05/31 13:52:44 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (s[++i])
 	{
 		if (s[i] == (char)c)
-			return ((char*)&s[i]);
+			return ((char *)&s[i]);
 	}
 	if (c == '\0')
-		return ((char*)&s[i]);
+		return ((char *)&s[i]);
 	return (0);
 }

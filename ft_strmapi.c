@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 01:32:27 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/26 11:45:23 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/05/31 13:56:39 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	size = ft_strlen(s);
 	i = 0;
-	if (!(dst = malloc(sizeof(char) * (size + 1))))
+	dst = malloc(sizeof(char) * (size + 1));
+	if (!dst)
 		return (NULL);
 	dst[size] = '\0';
 	while (s[i])

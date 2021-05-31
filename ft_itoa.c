@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:12:02 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/20 18:56:04 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:29:53 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	get_size(long int n)
 	return (size);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	long int	nb;
 	int			size;
@@ -40,7 +40,8 @@ char		*ft_itoa(int n)
 
 	nb = (long int)n;
 	size = get_size(nb);
-	if (!(num = malloc(sizeof(char) * (size + 1))))
+	num = malloc(sizeof(char) * (size + 1));
+	if (!num)
 		return (NULL);
 	if (nb < 0)
 		nb *= -1;

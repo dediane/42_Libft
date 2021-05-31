@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 17:48:58 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/19 18:05:53 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/05/28 16:01:39 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	unsigned char	*p_src;
 
 	i = 0;
-	p_dst = (unsigned char*)dst;
-	p_src = (unsigned char*)src;
+	p_dst = (unsigned char *)dst;
+	p_src = (unsigned char *)src;
 	while (i < n)
 	{
 		*(p_dst + i) = *(p_src + i);
 		if (*(p_dst + i) == (unsigned char)c)
-			return ((void*)(p_dst + i + 1));
+			return ((void *)(p_dst + i + 1));
 		i++;
 	}
 	return (NULL);

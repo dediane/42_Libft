@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 12:28:41 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/26 11:44:04 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/05/31 13:51:49 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static int	is_c(char s, char c)
 
 static int	nb_words(char const *s, char c)
 {
-	int i;
-	int nb;
+	int	i;
+	int	nb;
 
 	nb = 0;
 	i = 0;
@@ -39,7 +39,7 @@ static int	nb_words(char const *s, char c)
 
 static int	word_size(char const *s, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (!is_c(s[i], c) && s[i] != '\0')
@@ -49,10 +49,10 @@ static int	word_size(char const *s, char c)
 
 static char	**fill_tab(char **tab, char const *s, char c, int size)
 {
-	int i;
-	int j;
-	int k;
-	int to_malloc;
+	int	i;
+	int	j;
+	int	k;
+	int	to_malloc;
 
 	i = -1;
 	j = 0;
@@ -64,7 +64,8 @@ static char	**fill_tab(char **tab, char const *s, char c, int size)
 		if (s[j] && !is_c(s[j], c))
 		{
 			to_malloc = word_size(&s[j], c);
-			if (!(tab[i] = malloc(sizeof(char) * (to_malloc + 1))))
+			tab[i] = malloc(sizeof(char) * (to_malloc + 1));
+			if (!tab)
 				return (NULL);
 			while (s[j] && !is_c(s[j], c))
 				tab[i][k++] = s[j++];
@@ -74,7 +75,7 @@ static char	**fill_tab(char **tab, char const *s, char c, int size)
 	return (tab);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 	int		size;
@@ -82,7 +83,8 @@ char		**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	size = nb_words(s, c);
-	if (!(tab = malloc(sizeof(char*) * (size + 1))))
+	tab = malloc(sizeof(char *) * (size + 1));
+	if (!tab)
 		return (NULL);
 	tab[size] = NULL;
 	tab = fill_tab(tab, s, c, size);

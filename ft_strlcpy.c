@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 00:16:08 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/26 11:11:26 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/05/31 13:55:34 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	size_t srclen;
+	size_t	i;
+	size_t	srclen;
 
 	if (!src || !dst)
 		return (0);

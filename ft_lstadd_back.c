@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 19:09:29 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/22 04:00:25 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:30:47 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = *alst;
 	if (tmp)

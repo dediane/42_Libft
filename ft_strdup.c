@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 20:14:20 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/18 23:08:17 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/05/31 13:53:45 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strdup(const char *s1)
 
 	i = 0;
 	len = ft_strlen(s1);
-	if (!(s2 = malloc(sizeof(char) * (len + 1))))
+	s2 = malloc(sizeof(char) * (len + 1));
+	if (!s2)
 		return (NULL);
 	while (s1[i])
 	{

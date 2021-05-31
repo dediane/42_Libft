@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:20:20 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/26 00:00:54 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:20:38 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_checkcount(int j)
 		return (0);
 }
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	j;

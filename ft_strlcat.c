@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 00:28:01 by ddecourt          #+#    #+#             */
-/*   Updated: 2020/11/25 14:15:46 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/05/31 13:55:10 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t dstlen;
-	size_t srclen;
-	size_t i;
+	size_t	dstlen;
+	size_t	srclen;
+	size_t	i;
 
 	dstlen = ft_strlen(dst);
 	srclen = ft_strlen(src);
