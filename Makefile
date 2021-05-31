@@ -6,7 +6,7 @@
 #    By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:15:04 by ddecourt          #+#    #+#              #
-#    Updated: 2020/11/26 01:14:24 by ddecourt         ###   ########.fr        #
+#    Updated: 2021/05/31 14:43:03 by ddecourt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,9 @@ SRCS	= ft_bzero.c \
 	  ft_putstr_fd.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_fd.c \
+	  ft_putchar.c \
+	  ft_putstr.c \
+	  ft_putnbr.c \
 
 SRCS_B	= ft_lstnew.c \
 	  ft_lstadd_front.c \

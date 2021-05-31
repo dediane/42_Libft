@@ -6,7 +6,7 @@
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 18:13:19 by ddecourt          #+#    #+#             */
-/*   Updated: 2021/05/31 14:03:43 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/05/31 14:44:12 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,8 @@ void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)
 						(void *));
+void				ft_putchar(char c);
+void				ft_putstr(char *s);
+void				ft_putnbr(int n);
 
 #endif
