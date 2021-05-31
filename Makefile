@@ -6,7 +6,7 @@
 #    By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:15:04 by ddecourt          #+#    #+#              #
-#    Updated: 2021/05/31 14:43:03 by ddecourt         ###   ########.fr        #
+#    Updated: 2021/06/01 00:56:48 by ddecourt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,7 @@ NAME	= libft.a
 
 HEADER	= libft.h
 
-CC	= gcc
+CC	= clang
 
 CFLAGS	= -Wall -Werror -Wextra
 RM	= rm -f
